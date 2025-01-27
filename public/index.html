@@ -21,39 +21,44 @@
 </head>
 <body>
     <div id="player"></div>
+    <audio id="audioPlayer" autoplay loop>
+        <source src="rickroll.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <script>
-        // 1. Load the IFrame Player API code asynchronously
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        // 2. Create an <iframe> (and YouTube player) after the API code downloads
         var player;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '100%',
                 width: '100%',
-                videoId: 'dQw4w9WgXcQ', // Replace with your desired video ID
+                videoId: 'dQw4w9WgXcQ',
                 playerVars: {
-                    autoplay: 1,    // Start automatically
-                    mute: 1,        // Mute the video for autoplay to work initially
-                    controls: 0,    // Hide controls
-                    loop: 1,        // Loop the video
-                    playlist: 'dQw4w9WgXcQ',  // Ensure loop works
-                    modestbranding: 1,  // Reduce branding
-                    rel: 0,         // Disable related videos
-                    showinfo: 0     // Hide video info
+                    autoplay: 1,
+                    mute: 1,
+                    controls: 0,
+                    loop: 1,
+                    playlist: 'dQw4w9WgXcQ',
+                    modestbranding: 1,
+                    rel: 0,
+                    showinfo: 0
                 },
                 events: {
                     onReady: function() {
-                        player.playVideo();  // Auto-play when the player is ready
-                        player.unMute();     // Unmute once the video starts
+                        player.playVideo();
+                        player.unMute();
                     }
                 }
             });
         }
+
+        var audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.play();
     </script>
 </body>
 </html>
