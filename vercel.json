@@ -2,12 +2,12 @@
   "version": 2,
   "routes": [
     {
-      "src": "/",
-      "dest": "/api/status.js"
-    },
-    {
       "src": "/lol",
       "dest": "/public/index.html"
+    },
+    {
+      "src": "/",
+      "dest": "/api/status.js"
     }
   ]
 }
