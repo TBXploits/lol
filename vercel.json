@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/lol",
-      "dest": "/public/index.html"
+      "dest": "/index.html"
     },
     {
       "src": "/",
