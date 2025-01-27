@@ -38,7 +38,7 @@
                 videoId: 'dQw4w9WgXcQ', // Replace with your desired video ID
                 playerVars: {
                     autoplay: 1,    // Start automatically
-                    mute: 1,        // Mute the video for autoplay to work
+                    mute: 1,        // Mute the video for autoplay to work initially
                     controls: 0,    // Hide controls
                     loop: 1,        // Loop the video
                     playlist: 'dQw4w9WgXcQ',  // Ensure loop works
@@ -49,6 +49,7 @@
                 events: {
                     onReady: function() {
                         player.playVideo();  // Auto-play when the player is ready
+                        player.unMute();     // Unmute once the video starts
                     }
                 }
             });
